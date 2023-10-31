@@ -1,1 +1,11 @@
-
+.button-class {
+    background-color: rgb(182, 16, 16);
+    border: 2px solid #4caf50;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 2px 4px;
+    padding: 16px 32px;
+}
