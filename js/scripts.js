@@ -10,20 +10,40 @@ let pokemonRepository = (function () {
     {name: 'Wartortle', height: 1, types: ['water']},
     {name: 'Blastoise', height: 1.6, types: ['water']},
   ];
+  function showDetails(pokemon) {
+    console.log(pokemon)
+  }
+  function addListItem(pokemon) {
+    let pokeUL = document.querySelector('.pokelist');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('button-class');
+    listItem.appendChild(button);
+    pokeUL.appendChild(listItem);
+    button.addEventListener('click', function() {
+      showDetails(pokemon.name);
+    })
+  }
   return {
       add: function(pokemon) {
         pokemonList.push(pokemon);
       },
       getAll: function() {
         return pokemonList;
+      },
+      addListItem: function(pokemon) {
+        return addListItem(pokemon);
       }
     };
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-  document.write(pokemon.name + " (height: " + pokemon.height +")");
-  if (pokemon.height > 1.1) {
-    document.write(" Wow, that\'s big!");
-  }
-  document.write("<br/>")
+  pokemonRepository.addListItem(pokemon);
 })
+
+// document.write(pokemon.name + " (height: " + pokemon.height +")");
+//   if (pokemon.height > 1.1) {
+//     document.write(" Wow, that\'s big!");
+//   }
+//   document.write("<br/>")
