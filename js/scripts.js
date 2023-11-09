@@ -59,8 +59,8 @@ let pokemonRepository = (function () {
   }
   function showModal(name, height, imageURL) {
 
-    let modalBody = $(".modal-body");
-    let modalTitle = $(".modal-title");
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
     modalTitle.empty();
     modalBody.empty();
 
@@ -71,7 +71,7 @@ let pokemonRepository = (function () {
     myImage.src = imageURL;
 
     let contentElement = document.createElement('p');
-    contentElement.innerText = "Height: " + height;
+    contentElement.innerText = 'Height: ' + height;
 
     modalTitle.append(titleElement);
     modalBody.append(myImage);
